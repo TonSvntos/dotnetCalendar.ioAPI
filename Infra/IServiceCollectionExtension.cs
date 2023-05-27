@@ -13,8 +13,7 @@ namespace Infra.Context
         public static IServiceCollection AddInfraServiceCollection(this IServiceCollection services)
         {
             
-            services.AddScoped<ICategoriesRepository, CategoriesRepository>();
-            services.AddScoped<IProductRepository, ProductsRepository>();
+            services.AddScoped<IClienteRepository, ClientesRepository>();
             services.AddScoped<ILoginRepository, LoginRepository>();
 
 

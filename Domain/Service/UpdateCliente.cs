@@ -8,11 +8,11 @@ using Domain.Interfaces.Repository;
 
 namespace Domain.Service
 {
-    internal class UpdateProduct : IUpdateProduct
+    internal class UpdateCliente : IUpdateCliente
     {
-        public ProdutosDomain Execute(ProdutosDomain updProduct)
+        public ClientesDomain Execute(ClientesDomain updProduct)
         {
-            return DomainBase.Provider.GetService<IProductRepository>().UpdateProdutos(updProduct);
+            return DomainBase.Provider.GetService<IClienteRepository>().UpdateCliente(updProduct);
         }
     }
 }

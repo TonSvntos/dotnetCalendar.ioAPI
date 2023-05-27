@@ -19,22 +19,19 @@ namespace Domain
 
 
             //Categories
-            services.AddScoped<IListCategories, ListCategories>();
-            services.AddScoped<IInsertCategories, InsertCategories>();
 
 
-            services.AddScoped<IDeleteProduct, DeleteProduct>();
-            services.AddScoped<IUpdateProduct, UpdateProduct>();
-            services.AddScoped<IInsertProduct, InsertProduct>();
-            services.AddScoped<IListProduct, ListProduct>();
-            services.AddScoped<IListProductById, ListProductById>();
+            services.AddScoped<IUpdateCliente, UpdateCliente>();
+            services.AddScoped<IInsertCliente, InsertCliente>();
+            services.AddScoped<IListCliente, ListCliente>();
+            services.AddScoped<IListClienteById, ListClienteById>();
 
 
 
 
 
 
-            //Products
+            //Clientes
 
 
 

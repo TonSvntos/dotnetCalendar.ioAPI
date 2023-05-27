@@ -1,11 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
-using Framework.Crypto;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Reflection;
-using Framework.Context;
 
 namespace Framework.Infra
 {
@@ -173,12 +171,6 @@ namespace Framework.Infra
 					}
                 }
 
-				var cnnStrDecryptorUid = new SCriptografia().Descriptografar(cnnStrUid);
-				var cnnStrDecryptorPwd = new SCriptografia().Descriptografar(cnnStrPwd);
-
-				cnnStrFormat = cnnStr.Replace($"uid={cnnStrUid}", $"uid={cnnStrDecryptorUid}");
-
-				cnnStrFormat = cnnStrFormat.Replace($"pwd={cnnStrPwd}", $"pwd={cnnStrDecryptorPwd}");
 
 			}
 

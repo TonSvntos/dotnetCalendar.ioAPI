@@ -8,11 +8,11 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Domain.Service
 {
-    public class InsertCategories : IInsertCategories
+    public class InsertCliente : IInsertCliente
     {
-        public CategoriasDomain Execute(CategoriasDomain insCategories)
+        public ClientesDomain Execute(ClientesDomain insClientes)
         {
-            return DomainBase.Provider.GetService<ICategoriesRepository>().InsertCategories(insCategories);
+            return DomainBase.Provider.GetService<IClienteRepository>().InsertCliente(insClientes);
         }
     }
 }

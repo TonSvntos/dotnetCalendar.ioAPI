@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+using System.Text;
+
+namespace Domain.Models
+{
+    public class ClientesDomain
+    {
+
+        public long ClienteId { get; set; }
+        public string? NomeCliente { get; set; }
+        public int? TelefoneCliente { get; set ; }
+        public string? ClienteEndereco { get; set; }
+        public DateTime DataDoAtendimento { get; set; }
+        public string? ClienteBairro { get; set; }
+        public string? TipoDeServico { get; set; }
+
+    }
+}

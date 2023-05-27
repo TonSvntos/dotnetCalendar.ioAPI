@@ -9,12 +9,11 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Application.Interfaces
 {
-    public interface IProductsService
+    public interface IClientesService
     {
-        vmProducts InsertProduct(vmProducts insProduto);
-        vmProducts UpdateProduct(vmProducts updProduto);
-        List<vmProducts> ListProduct(vmProductsFilter filter);
-        bool DeleteProduct(long dltProduct);
+        vmClientes InsertCliente(vmClientes insCliente);
+        vmClientes UpdateCliente(vmClientes updCliente);
+        List<vmClientes> ListCliente(vmClientes filter);
 
     }
 }

@@ -5,14 +5,13 @@ using Domain.Models;
 
 namespace Domain.Interfaces.Repository
 {
-    public interface IProductRepository
+    public interface IClienteRepository
     {
-        public List<ProdutosDomain> ListProdutosDomain(ProductsFilterDomain filter);
-        public List<ProdutosDomain> ListProdutosDomainById(long produtoId);
+        public List<ClientesDomain> ListClienteDomain(ClientesDomain filter);
+        public List<ClientesDomain> ListClienteDomainById(long produtoId);
 
-        public ProdutosDomain UpdateProdutos(ProdutosDomain updProdutos);
-        public ProdutosDomain InsertProdutos(ProdutosDomain insProdutos);
-        long DeleteProduct(long idProduto);
+        public ClientesDomain UpdateCliente(ClientesDomain updProdutos);
+        public ClientesDomain InsertCliente(ClientesDomain insProdutos);
 
 
 

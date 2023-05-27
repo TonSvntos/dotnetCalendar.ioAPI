@@ -58,20 +58,12 @@
     <Folder Include="Properties" />
     <Folder Include="Tables" />
     <Folder Include="StoredProcedures" />
-    <Folder Include="StoredProcedures\Produtos" />
-    <Folder Include="StoredProcedures\Categorias" />
+    <Folder Include="StoredProcedures\Clientes" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="StoredProcedures\spLogin.sql" />
     <Build Include="Tables\Usuarios.sql" />
-    <Build Include="Tables\Produtos.sql" />
-    <Build Include="Tables\Categorias.sql" />
-    <Build Include="StoredProcedures\Produtos\spINSProduct.sql" />
-    <Build Include="StoredProcedures\Produtos\spLSTProdutos.sql" />
-    <Build Include="StoredProcedures\Categorias\spINSCategories.sql" />
-    <Build Include="StoredProcedures\Categorias\spLSTCategorias.sql" />
-    <Build Include="StoredProcedures\Produtos\spDELProduto.sql" />
-    <Build Include="StoredProcedures\Produtos\spUPDProdutos.sql" />
-    <Build Include="StoredProcedures\Produtos\spSELProductById.sql" />
+    <Build Include="StoredProcedures\Clientes\spINSClientes.sql" />
+    <Build Include="StoredProcedures\Clientes\spSELClienteById.sql" />
   </ItemGroup>
 </Project>

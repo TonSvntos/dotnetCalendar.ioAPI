@@ -22,7 +22,7 @@ namespace WebApi
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Prova DoubleIt", Version = "v1", });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Calendar.io", Version = "v1", });
 
 
             });
@@ -38,7 +38,12 @@ namespace WebApi
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true) // allow any origin
+                .AllowCredentials()); // allow credentials
+
 
             app.UseEndpoints(endpoints =>
             {

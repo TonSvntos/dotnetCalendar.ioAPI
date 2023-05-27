@@ -6,11 +6,11 @@ using Domain.Interfaces.Repository;
 
 namespace Domain.Service
 {
-    public class ListProductById : IListProductById
+    public class ListClienteById : IListClienteById
     {
-        public List<ProdutosDomain> Execute(long produtoId)
+        public List<ClientesDomain> Execute(long produtoId)
         {
-            return DomainBase.Provider.GetService<IProductRepository>().ListProdutosDomainById(produtoId);
+            return DomainBase.Provider.GetService<IClienteRepository>().ListClienteDomainById(produtoId);
         }
 
     }

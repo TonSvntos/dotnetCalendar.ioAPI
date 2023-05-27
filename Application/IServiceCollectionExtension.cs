@@ -12,8 +12,7 @@ namespace Application
         public static IServiceCollection AddApplicationServiceCollection(this IServiceCollection services)
         {
             services.AddScoped<IUsuariosService, UsuariosService>();
-            services.AddScoped<ICategoriesService, CategoriesService>();
-            services.AddScoped<IProductsService, ProductsService>();
+            services.AddScoped<IClientesService, ClientesService>();
 
             return services;
         }

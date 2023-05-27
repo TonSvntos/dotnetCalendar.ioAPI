@@ -4,9 +4,9 @@ using Domain.Models;
 
 namespace Domain.Interfaces.Command
 {
-    public interface IListProduct
+    public interface IListCliente
     {
-        public List<ProdutosDomain> Execute(ProductsFilterDomain filter);
+        public List<ClientesDomain> Execute(ClientesDomain filter);
 
     }
 }

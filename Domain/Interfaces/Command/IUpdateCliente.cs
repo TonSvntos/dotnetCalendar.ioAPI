@@ -6,9 +6,9 @@ using Domain.Models;
 
 namespace Domain.Interfaces.Command
 {
-    public interface IUpdateProduct
+    public interface IUpdateCliente
     {
-        public ProdutosDomain Execute(ProdutosDomain updProduct);
+        public ClientesDomain Execute(ClientesDomain updCliente);
 
     }
 }
