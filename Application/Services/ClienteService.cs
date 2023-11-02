@@ -57,6 +57,17 @@ namespace Application.Services
 
         }
 
+        public List<vmClientes> GetAllClients()
+        {
+
+            var rep = GetService<IListCliente>();
+
+            List<ClientesDomain> lstClientes = rep.GetAllClients();
+
+            return ConvertModelToViewModel(lstClientes);
+
+        }
+
         public List<vmClientes> ListClienteById(long produtoId)
         {
             var rep = GetService<IListClienteById>();

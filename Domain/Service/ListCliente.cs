@@ -12,5 +12,10 @@ namespace Domain.Service
         {
             return DomainBase.Provider.GetService<IClienteRepository>().ListClienteDomain(filter);
         }
+
+        public List<ClientesDomain> GetAllClients()
+        {
+            return DomainBase.Provider.GetService<IClienteRepository>().GetAllClients();
+        }
     }
 }

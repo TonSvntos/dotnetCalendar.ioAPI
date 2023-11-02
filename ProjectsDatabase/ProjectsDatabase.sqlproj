@@ -65,5 +65,6 @@
     <Build Include="Tables\Usuarios.sql" />
     <Build Include="StoredProcedures\Clientes\spINSClientes.sql" />
     <Build Include="StoredProcedures\Clientes\spSELClienteById.sql" />
+    <Build Include="StoredProcedures\Clientes\spLSTAllClients.sql" />
   </ItemGroup>
 </Project>

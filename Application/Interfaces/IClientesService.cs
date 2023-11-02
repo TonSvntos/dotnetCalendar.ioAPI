@@ -12,6 +12,8 @@ namespace Application.Interfaces
     public interface IClientesService
     {
         vmClientes InsertCliente(vmClientes insCliente);
+        List<vmClientes> GetAllClients();
+
         vmClientes UpdateCliente(vmClientes updCliente);
         List<vmClientes> ListCliente(vmClientes filter);
 

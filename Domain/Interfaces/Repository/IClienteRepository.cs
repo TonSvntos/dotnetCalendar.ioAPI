@@ -9,6 +9,8 @@ namespace Domain.Interfaces.Repository
     {
         public List<ClientesDomain> ListClienteDomain(ClientesDomain filter);
         public List<ClientesDomain> ListClienteDomainById(long produtoId);
+        public List<ClientesDomain> GetAllClients();
+
 
         public ClientesDomain UpdateCliente(ClientesDomain updProdutos);
         public ClientesDomain InsertCliente(ClientesDomain insProdutos);

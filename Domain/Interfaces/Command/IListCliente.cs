@@ -7,6 +7,8 @@ namespace Domain.Interfaces.Command
     public interface IListCliente
     {
         public List<ClientesDomain> Execute(ClientesDomain filter);
+        public List<ClientesDomain> GetAllClients();
+
 
     }
 }

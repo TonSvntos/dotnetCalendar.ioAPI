@@ -15,6 +15,33 @@ namespace WebAPI.Controllers
         string errorMsg = string.Empty;
 
 
+        [HttpGet]
+        public IActionResult GetAllClients()
+        {
+            var result = new vmResult();
+
+            try
+            {
+
+                var service = Provider.GetService<IClientesService>();
+
+
+                var ret = service.GetAllClients();
+                result.Data = ret;
+                if (ret.Count == 0)
+                {
+                    result.FriendlyErrorMessage = "Nenhuma informação encontrada.";
+                }
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                result.FriendlyErrorMessage = "Erro inesperado";
+                result.StackTrace = ex.Message + "/n" + ex.StackTrace;
+                return BadRequest(result);
+            }
+        }
+
         [HttpPost, Route("ListClientes")]
         public IActionResult ListClientes(vmClientes filter)
         {
@@ -81,7 +108,7 @@ namespace WebAPI.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("UpdateCliente")]
         public IActionResult UpdateCliente(vmClientes updCliente)
         {
@@ -106,7 +133,7 @@ namespace WebAPI.Controllers
                         result.FriendlyErrorMessage = "Cliente não encontrado";
                         return BadRequest(result);
                     }
-                    return Ok(result);
+                    return Accepted(result);
                 }
                 else
                 {

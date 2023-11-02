@@ -13,18 +13,21 @@ namespace Application.ViewModels
         [DataMember]
         public long ClienteId { get; set; }
         [DataMember]
-        public string? NomeCliente { get; set; }
+        public string NomeCliente { get; set; }
         [DataMember]
         public int? TelefoneCliente { get; set; }
         [DataMember]
-        public string? ClienteEndereco { get; set; }
+        public string ClienteEndereco { get; set; }
         [DataMember]
         public DateTime? DataDoAtendimento { get; set; }
         [DataMember]
-        public string? ClienteBairro { get; set; }
+        public string ClienteBairro { get; set; }
         [DataMember]
 
-        public string? TipoDeServico { get; set; }
+        public string TipoDeServico { get; set; }
+
+
+
 
 
     }

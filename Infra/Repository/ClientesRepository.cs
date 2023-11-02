@@ -44,6 +44,13 @@ namespace Infra.Repository
             });
         }
 
+        public List<ClientesDomain> GetAllClients()
+        {
+            Helper helper = new Helper();
+
+            return helper.ExecuteList<ClientesDomain>(db, "dbo.spLSTAllClients");
+        }
+
         public List<ClientesDomain> ListClienteDomainById(long clienteId)
         {
             Helper helper = new Helper();
