@@ -8,7 +8,7 @@ namespace Application.ViewModels
 {
     [Serializable]
     [DataContract]
-    public class vmClientes 
+    public class vmClientes
     {
         [DataMember]
         public long ClienteId { get; set; }
@@ -25,6 +25,14 @@ namespace Application.ViewModels
         [DataMember]
 
         public string TipoDeServico { get; set; }
+        [DataMember]
+        public int? Numero { get; set; }
+        [DataMember]
+        public string Complemento { get; set; }
+        [DataMember]
+        public string Cidade {get; set; }
+        [DataMember]
+        public int? Cep { get; set; }
 
 
 

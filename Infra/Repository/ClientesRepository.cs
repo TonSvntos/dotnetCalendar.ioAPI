@@ -11,22 +11,30 @@ namespace Infra.Repository
     {
         const PEnvironment.PDB db = PEnvironment.PDB.ProjectsDatabase;
 
-        public ClientesDomain InsertCliente(ClientesDomain insCliente)
+        public ClientesDomain InsertCliente(ClientesDomain cliente)
         {
             Helper helper = new Helper();
 
             helper.ExecuteNonQuery(db, "dbo.spINSCliente", new
             {
 
-                insCliente.NomeCliente,
-                insCliente.TelefoneCliente,
-                insCliente.ClienteEndereco,
-                insCliente.ClienteBairro,
-                insCliente.DataDoAtendimento,
-                insCliente.TipoDeServico
+                cliente.NomeCliente,
+                cliente.TelefoneCliente,
+                cliente.ClienteEndereco,
+                cliente.ClienteBairro,
+                cliente.DataDoAtendimento,
+                cliente.TipoDeServico
+                ,
+                cliente.Cep
+                ,
+                cliente.Numero
+                ,
+                cliente.Complemento
+                ,
+                cliente.Cidade
             });
 
-            return insCliente;
+            return cliente;
         }
 
         public List<ClientesDomain> ListClienteDomain(ClientesDomain filter)
@@ -61,27 +69,35 @@ namespace Infra.Repository
             });
         }
 
-        public ClientesDomain UpdateCliente(ClientesDomain updCliente)
+        public ClientesDomain UpdateCliente(ClientesDomain cliente)
         {
             Helper helper = new Helper();
 
             helper.ExecuteNonQuery(db, "dbo.spUPDCliente", new
             {
-                updCliente.ClienteId,
-                updCliente.NomeCliente,
-                updCliente.TelefoneCliente,
-                updCliente.ClienteEndereco,
-                updCliente.ClienteBairro,
-                updCliente.DataDoAtendimento,
-                updCliente.TipoDeServico
+                cliente.ClienteId,
+                cliente.NomeCliente,
+                cliente.TelefoneCliente,
+                cliente.ClienteEndereco,
+                cliente.ClienteBairro,
+                cliente.DataDoAtendimento,
+                cliente.TipoDeServico
+                     ,
+                cliente.Cep
+                ,
+                cliente.Numero
+                ,
+                cliente.Complemento
+                ,
+                cliente.Cidade
 
 
             });
 
-            return updCliente;
+            return cliente;
         }
 
 
-        
+
     }
 }

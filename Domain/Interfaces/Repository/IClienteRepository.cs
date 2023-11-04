@@ -12,8 +12,8 @@ namespace Domain.Interfaces.Repository
         public List<ClientesDomain> GetAllClients();
 
 
-        public ClientesDomain UpdateCliente(ClientesDomain updProdutos);
-        public ClientesDomain InsertCliente(ClientesDomain insProdutos);
+        public ClientesDomain UpdateCliente(ClientesDomain cliente);
+        public ClientesDomain InsertCliente(ClientesDomain cliente);
 
 
 
