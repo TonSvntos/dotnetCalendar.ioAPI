@@ -1,11 +1,22 @@
-﻿Create PROCEDURE [dbo].[spINSCliente] 
+﻿USE [ProjectsDatabase]
+GO
+/****** Object:  StoredProcedure [dbo].[spINSCliente]    Script Date: 05/11/2023 18:56:12 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[spINSCliente] 
    	
-  @NomeCliente		varchar(50) 
- , @TelefoneCliente	int			
- , @ClienteEndereco	varchar(100)	
- , @DataDoAtendimento date		
+  @NomeCliente			varchar(50) 
+ , @TelefoneCliente		int			
+ , @ClienteEndereco		varchar(100)	
+ , @DataDoAtendimento	date		
  , @ClienteBairro		varchar(50)	
- , @TipoDeServico     varchar(30)
+ , @TipoDeServico		varchar(30),
+	@Cep				int ,
+	@numero				int ,
+	@complemento		varchar(50),
+	@cidade				varchar(50) 
 
  as begin
 
@@ -13,10 +24,14 @@
                (
 					[NomeCliente]		
 					, TelefoneCliente	
-					, ClienteEndereco		
+					, ClienteEndereco	
 					, DataDoAtendimento 
 					, ClienteBairro	
 					, TipoDeServico
+					, Cep
+					,numero
+					,Complemento
+					,Cidade
 				)
          VALUES
                (
@@ -27,6 +42,9 @@
 			   , @DataDoAtendimento
 			   , @ClienteBairro	
 			   , @TipoDeServico
-
+			   , @Cep			
+			   , @numero			
+			   , @complemento	
+			   , @cidade			
 			   )
     END
