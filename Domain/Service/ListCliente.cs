@@ -17,5 +17,11 @@ namespace Domain.Service
         {
             return DomainBase.Provider.GetService<IClienteRepository>().GetAllClients();
         }
+
+        public List<ClientesDomain> ListOrcaments()
+        {
+            return DomainBase.Provider.GetService<IClienteRepository>().ListOrcaments();
+
+        }
     }
 }

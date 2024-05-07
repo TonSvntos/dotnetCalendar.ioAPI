@@ -70,6 +70,33 @@ namespace WebAPI.Controllers
             }
         }
 
+        [HttpGet, Route("GetOrcaments")]
+        public IActionResult GetOrcaments()
+        {
+            var result = new vmResult();
+
+            try
+            {
+
+                var service = Provider.GetService<IClientesService>();
+
+                var ret = service.ListOrcamentos();
+                result.Data = ret;
+                if (ret.Count == 0)
+                {
+                    result.FriendlyErrorMessage = "Nenhuma informação encontrada.";
+                }
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                result.FriendlyErrorMessage = "Erro inesperado";
+                result.StackTrace = ex.Message + "/n" + ex.StackTrace;
+                return BadRequest(result);
+            }
+        }
+
+
 
 
         [HttpPost]
@@ -143,6 +170,29 @@ namespace WebAPI.Controllers
 
 
             }
+            catch (Exception ex)
+            {
+
+                result.FriendlyErrorMessage = "Erro inesperado";
+                result.StackTrace = ex.Message + "/n" + ex.StackTrace;
+                return BadRequest(result);
+            }
+        }
+
+        [HttpPut]
+        [Route("ConfirmPayment")]
+        public IActionResult ConfirmPayment(vmClientes cliente)
+        {
+            vmResult result = new vmResult();
+            try
+            {
+                var service = Provider.GetService<IClientesService>();
+
+                service.ConfirmPayment(cliente);
+
+                return Ok(cliente);
+            }
+
             catch (Exception ex)
             {
 

@@ -19,6 +19,10 @@ namespace Domain.Models
         public string Cidade { get; set; }
         public string Complemento { get; set; }
         public int Numero { get; set; }
+        public bool PagamentoConfirmado { get; set; }
+        public double? Orcamento { get; set; }
+        public double? Pagamento { get; set; }
+
 
 
 

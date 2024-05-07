@@ -32,6 +32,7 @@ namespace Infra.Repository
                 cliente.Complemento
                 ,
                 cliente.Cidade
+                , cliente.Orcamento
             });
 
             return cliente;
@@ -50,6 +51,14 @@ namespace Infra.Repository
                 filter.DataDoAtendimento,
                 filter.TipoDeServico
             });
+        }
+
+
+        public List<ClientesDomain> ListOrcaments()
+        {
+            Helper helper = new Helper();
+
+            return helper.ExecuteList<ClientesDomain>(db, "dbo.spLSTOrcamentos");
         }
 
         public List<ClientesDomain> GetAllClients()
@@ -90,6 +99,7 @@ namespace Infra.Repository
                 cliente.Complemento
                 ,
                 cliente.Cidade
+                , cliente.Orcamento
 
 
             });
@@ -97,6 +107,14 @@ namespace Infra.Repository
             return cliente;
         }
 
+        public void ConfirmPayment(ClientesDomain cliente)
+        {
+            Helper helper = new Helper();
+
+            //cliente.PagamentoConfirmado = !cliente.PagamentoConfirmado;
+
+            helper.ExecuteNonQuery(db, "dbo.[spUpdPagamentoEfetuado]", new { cliente.ClienteId, cliente.PagamentoConfirmado });
+        }
 
 
     }

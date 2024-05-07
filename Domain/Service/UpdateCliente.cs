@@ -14,5 +14,11 @@ namespace Domain.Service
         {
             return DomainBase.Provider.GetService<IClienteRepository>().UpdateCliente(updProduct);
         }
+
+        public void ConfirmPayment(ClientesDomain updProduct)
+        {
+            DomainBase.Provider.GetService<IClienteRepository>().ConfirmPayment(updProduct);
+
+        }
     }
 }

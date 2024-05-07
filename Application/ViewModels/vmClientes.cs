@@ -30,9 +30,15 @@ namespace Application.ViewModels
         [DataMember]
         public string Complemento { get; set; }
         [DataMember]
-        public string Cidade {get; set; }
+        public string Cidade { get; set; }
         [DataMember]
         public int? Cep { get; set; }
+        [DataMember]
+        public bool PagamentoConfirmado { get; set; }
+        [DataMember]
+        public double? Orcamento { get; set; }
+        [DataMember]
+        public double? Pagamento { get; set; }
 
 
 

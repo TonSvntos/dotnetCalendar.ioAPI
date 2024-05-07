@@ -9,6 +9,9 @@ namespace Domain.Interfaces.Command
         public List<ClientesDomain> Execute(ClientesDomain filter);
         public List<ClientesDomain> GetAllClients();
 
+        public List<ClientesDomain> ListOrcaments();
+
+
 
     }
 }

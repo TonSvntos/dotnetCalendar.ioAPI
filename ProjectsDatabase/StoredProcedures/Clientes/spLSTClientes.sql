@@ -1,10 +1,6 @@
 ﻿USE [ProjectsDatabase]
 GO
-/****** Object:  StoredProcedure [dbo].[spLSTClientes]    Script Date: 05/11/2023 18:57:28 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
+
   
 ALTER procedure [dbo].[spLSTClientes]  
   

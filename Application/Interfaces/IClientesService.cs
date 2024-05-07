@@ -12,10 +12,12 @@ namespace Application.Interfaces
     public interface IClientesService
     {
         vmClientes InsertCliente(vmClientes insCliente);
+        public void ConfirmPayment(vmClientes clientes);
         List<vmClientes> GetAllClients();
 
         vmClientes UpdateCliente(vmClientes updCliente);
         List<vmClientes> ListCliente(vmClientes filter);
+        public List<vmClientes> ListOrcamentos();
 
     }
 }

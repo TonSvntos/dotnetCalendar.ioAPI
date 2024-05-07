@@ -10,6 +10,10 @@ namespace Domain.Interfaces.Repository
         public List<ClientesDomain> ListClienteDomain(ClientesDomain filter);
         public List<ClientesDomain> ListClienteDomainById(long produtoId);
         public List<ClientesDomain> GetAllClients();
+        public void ConfirmPayment(ClientesDomain cliente);
+        public List<ClientesDomain> ListOrcaments();
+
+
 
 
         public ClientesDomain UpdateCliente(ClientesDomain cliente);

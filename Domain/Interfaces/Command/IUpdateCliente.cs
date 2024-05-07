@@ -9,6 +9,7 @@ namespace Domain.Interfaces.Command
     public interface IUpdateCliente
     {
         public ClientesDomain Execute(ClientesDomain updCliente);
+        public void ConfirmPayment(ClientesDomain updProduct);
 
     }
 }

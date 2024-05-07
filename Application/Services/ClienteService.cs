@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Sockets;
 using System.Text;
 using Application.Interfaces;
 using Application.ViewModels;
@@ -45,6 +46,16 @@ namespace Application.Services
             return result;
         }
 
+        public void ConfirmPayment(vmClientes clientes)
+        {
+            var rep = GetService<IUpdateCliente>();
+
+            ClientesDomain param = DataHelper.Read<ClientesDomain>(clientes);
+
+            rep.ConfirmPayment(param);
+
+        }
+
         public List<vmClientes> ListCliente(vmClientes filter)
         {
             ClientesDomain param = DataHelper.Read<ClientesDomain>(filter);
@@ -52,6 +63,18 @@ namespace Application.Services
             var rep = GetService<IListCliente>();
 
             List<ClientesDomain> lstClientes = rep.Execute(param);
+
+            return ConvertModelToViewModel(lstClientes);
+
+        }
+
+        public List<vmClientes> ListOrcamentos( )
+        {
+            
+
+            var rep = GetService<IListCliente>();
+
+            List<ClientesDomain> lstClientes = rep.ListOrcaments();
 
             return ConvertModelToViewModel(lstClientes);
 

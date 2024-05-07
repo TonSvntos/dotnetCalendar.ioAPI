@@ -1,10 +1,6 @@
 ﻿USE [ProjectsDatabase]
 GO
-/****** Object:  StoredProcedure [dbo].[spUPDCliente]    Script Date: 05/11/2023 18:56:47 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
+
 ALTER PROCEDURE [dbo].[spUPDCliente]
 
 	@ClienteId  int					  
