@@ -5,6 +5,7 @@ using System;
 using Application.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.WebEncoders.Testing;
+using System.Collections.Generic;
 
 namespace WebAPI.Controllers;
 
@@ -197,6 +198,27 @@ public class ClientesController : WebapiControllerBase
         {
 
             result.FriendlyErrorMessage = "Erro inesperado";
+            result.StackTrace = ex.Message + "/n" + ex.StackTrace;
+            return BadRequest(result);
+        }
+    }
+
+    [HttpPost("GenerateExcel")]
+    public IActionResult GenerateExcel(List<Domain.Models.Meses> meses)
+    {
+        
+        vmResult result = new vmResult();
+        try
+        {
+            var service = Provider.GetService<IClientesService>();
+            var data = service.GenerateExcel(meses);
+            result.Data = data;
+
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            result.FriendlyErrorMessage = "Unexpected Error";
             result.StackTrace = ex.Message + "/n" + ex.StackTrace;
             return BadRequest(result);
         }
